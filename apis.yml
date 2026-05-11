@@ -1,0 +1,108 @@
+aid: ray
+name: Ray
+description: >-
+  Ray is an open-source unified compute framework, stewarded by Anyscale,
+  that scales Python and AI workloads from a laptop to a cluster. It
+  consists of Ray Core (a distributed runtime) and a set of AI libraries
+  (Ray Train, Ray Data, Ray Tune, Ray Serve, RLlib) for training, batch
+  inference, hyperparameter search, and model serving. Ray clusters expose
+  a Dashboard and Jobs REST API on the head node (default port 8265) for
+  submitting jobs, inspecting actors and tasks, and serving deployed
+  applications via Ray Serve HTTP endpoints.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Distributed Computing
+  - Machine Learning
+  - AI Infrastructure
+  - Python
+  - Model Serving
+  - Open Source
+  - Compute
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/ray/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: ray:jobs-api
+    name: Ray Jobs REST API
+    description: >-
+      REST API on the Ray head node for submitting, listing, inspecting,
+      and stopping Ray jobs, plus streaming logs. Default base URL is
+      http://<head-node>:8265/api/jobs/. Open-source clusters are typically
+      unauthenticated; production deployments rely on network controls or
+      Anyscale-managed authentication.
+    humanURL: https://docs.ray.io/en/latest/cluster/running-applications/job-submission/rest.html
+    baseURL: http://127.0.0.1:8265/api
+    tags:
+      - Jobs
+      - Cluster
+      - Submission
+      - Logs
+    properties:
+      - type: Documentation
+        url: https://docs.ray.io/en/latest/cluster/running-applications/job-submission/rest.html
+      - type: Python SDK
+        url: https://docs.ray.io/en/latest/cluster/running-applications/job-submission/sdk.html
+      - type: CLI
+        url: https://docs.ray.io/en/latest/cluster/running-applications/job-submission/cli.html
+  - aid: ray:dashboard-api
+    name: Ray Dashboard API
+    description: >-
+      Internal REST API powering the Ray Dashboard, exposing endpoints for
+      nodes, actors, tasks, placement groups, runtime environments, and
+      cluster events. Same base URL as the Jobs API (http://<head>:8265).
+    humanURL: https://docs.ray.io/en/latest/ray-observability/getting-started.html
+    baseURL: http://127.0.0.1:8265/api
+    tags:
+      - Observability
+      - Dashboard
+      - Cluster State
+      - Actors
+    properties:
+      - type: Documentation
+        url: https://docs.ray.io/en/latest/ray-observability/getting-started.html
+  - aid: ray:serve-api
+    name: Ray Serve HTTP API
+    description: >-
+      HTTP interface for invoking models and applications deployed via Ray
+      Serve. Each deployed application is exposed as an HTTP endpoint on
+      the Serve HTTP proxy (default port 8000); authentication and routing
+      are configured per deployment.
+    humanURL: https://docs.ray.io/en/latest/serve/index.html
+    baseURL: http://127.0.0.1:8000
+    tags:
+      - Model Serving
+      - Inference
+      - HTTP
+    properties:
+      - type: Documentation
+        url: https://docs.ray.io/en/latest/serve/index.html
+      - type: Production Guide
+        url: https://docs.ray.io/en/latest/serve/production-guide/index.html
+
+common:
+  - type: Website
+    url: https://www.ray.io
+  - type: Documentation
+    url: https://docs.ray.io
+  - type: GitHub Repository
+    url: https://github.com/ray-project/ray
+  - type: GitHub Organization
+    url: https://github.com/ray-project
+  - type: Anyscale
+    url: https://www.anyscale.com
+  - type: Slack
+    url: https://www.ray.io/community
+  - type: Forum
+    url: https://discuss.ray.io
+  - type: Blog
+    url: https://www.anyscale.com/blog
+  - type: Issues
+    url: https://github.com/ray-project/ray/issues
+  - type: License
+    url: https://github.com/ray-project/ray/blob/master/LICENSE
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

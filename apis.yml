@@ -87,9 +87,9 @@ common:
     url: https://www.ray.io
   - type: Documentation
     url: https://docs.ray.io
-  - type: GitHub Repository
+  - type: GitHubRepository
     url: https://github.com/ray-project/ray
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/ray-project
   - type: Anyscale
     url: https://www.anyscale.com

@@ -1,0 +1,101 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ray Jobs REST API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "List all jobs",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://127.0.0.1:8265/api/jobs/"
+      },
+      "docs": "List all jobs"
+    },
+    {
+      "info": {
+        "name": "Submit a new job",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8265/api/jobs/",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Submit a new job"
+    },
+    {
+      "info": {
+        "name": "Get job status",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://127.0.0.1:8265/api/jobs/:job_id",
+        "params": [
+          {
+            "name": "job_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get job status"
+    },
+    {
+      "info": {
+        "name": "Get job logs",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://127.0.0.1:8265/api/jobs/:job_id/logs",
+        "params": [
+          {
+            "name": "job_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get job logs"
+    },
+    {
+      "info": {
+        "name": "Stop a job",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8265/api/jobs/:job_id/stop",
+        "params": [
+          {
+            "name": "job_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Stop a job"
+    },
+    {
+      "info": {
+        "name": "Get Ray cluster version",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://127.0.0.1:8265/api/version"
+      },
+      "docs": "Get Ray cluster version"
+    }
+  ],
+  "bundled": true
+}

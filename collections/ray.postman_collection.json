@@ -1,0 +1,518 @@
+{
+  "item": [
+    {
+      "id": "a43c79fe-7468-4418-b4da-d7a614115d8a",
+      "name": "List all jobs",
+      "request": {
+        "name": "List all jobs",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            "jobs",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "465f5269-9592-485b-bb94-e42c8bfd9e1d",
+          "name": "Map of submission IDs to job details.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "jobs",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"key_0\": {\n    \"type\": \"string\",\n    \"job_id\": \"string\",\n    \"submission_id\": \"string\",\n    \"driver_info\": {},\n    \"status\": \"SUCCEEDED\",\n    \"entrypoint\": \"string\",\n    \"message\": \"string\",\n    \"error_type\": \"string\",\n    \"start_time\": 8820,\n    \"end_time\": null,\n    \"metadata\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\",\n      \"key_4\": \"string\"\n    },\n    \"runtime_env\": {}\n  },\n  \"key_1\": {\n    \"type\": \"string\",\n    \"job_id\": \"string\",\n    \"submission_id\": \"string\",\n    \"driver_info\": {},\n    \"status\": \"STOPPED\",\n    \"entrypoint\": \"string\",\n    \"message\": \"string\",\n    \"error_type\": null,\n    \"start_time\": 1208,\n    \"end_time\": null,\n    \"metadata\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"runtime_env\": {}\n  },\n  \"key_2\": {\n    \"type\": \"string\",\n    \"job_id\": \"string\",\n    \"submission_id\": \"string\",\n    \"driver_info\": {},\n    \"status\": \"RUNNING\",\n    \"entrypoint\": \"string\",\n    \"message\": \"string\",\n    \"error_type\": \"string\",\n    \"start_time\": 6850,\n    \"end_time\": 7410,\n    \"metadata\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"runtime_env\": {}\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "5e1f016d-0f8e-4083-a96a-47a6bb969d30",
+      "name": "Submit a new job",
+      "request": {
+        "name": "Submit a new job",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            "jobs",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"entrypoint\": \"<string>\",\n  \"runtime_env\": \"<object>\",\n  \"job_id\": \"<string,null>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\"\n  },\n  \"entrypoint_num_cpus\": \"<number>\",\n  \"entrypoint_num_gpus\": \"<number>\",\n  \"entrypoint_resources\": {\n    \"key_0\": \"<number>\",\n    \"key_1\": \"<number>\",\n    \"key_2\": \"<number>\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "ac93fed5-712b-4ecd-8d58-cabc44e3389b",
+          "name": "Job submitted.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "jobs",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entrypoint\": \"<string>\",\n  \"runtime_env\": \"<object>\",\n  \"job_id\": \"<string,null>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\"\n  },\n  \"entrypoint_num_cpus\": \"<number>\",\n  \"entrypoint_num_gpus\": \"<number>\",\n  \"entrypoint_resources\": {\n    \"key_0\": \"<number>\",\n    \"key_1\": \"<number>\",\n    \"key_2\": \"<number>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"job_id\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "816046b9-0a6c-4963-b915-3581e28bad6b",
+      "name": "Get job status",
+      "request": {
+        "name": "Get job status",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            "jobs",
+            ":job_id"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "job_id",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "90b2d423-97b4-4a29-ae99-286213382129",
+          "name": "Job details.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "jobs",
+                ":job_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "job_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"type\": \"string\",\n  \"job_id\": \"string\",\n  \"submission_id\": \"string\",\n  \"driver_info\": {},\n  \"status\": \"FAILED\",\n  \"entrypoint\": \"string\",\n  \"message\": \"string\",\n  \"error_type\": \"string\",\n  \"start_time\": 9798,\n  \"end_time\": 8898,\n  \"metadata\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\",\n    \"key_3\": \"string\"\n  },\n  \"runtime_env\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "b67c51d9-c926-4fdc-8053-e39dd84ab91b",
+      "name": "Get job logs",
+      "request": {
+        "name": "Get job logs",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            "jobs",
+            ":job_id",
+            "logs"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "job_id",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "4a194ce2-fe0b-48d1-bcdf-9720b1cb01b4",
+          "name": "Job logs.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "jobs",
+                ":job_id",
+                "logs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "job_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"logs\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "ceccf097-5d96-4c02-b31f-189d1dca757b",
+      "name": "Stop a job",
+      "request": {
+        "name": "Stop a job",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            "jobs",
+            ":job_id",
+            "stop"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "job_id",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "b44fa93e-6e14-456c-a919-996ae2a55731",
+          "name": "Stop result.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "jobs",
+                ":job_id",
+                "stop"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "job_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"stopped\": true\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "a2c0503b-a356-4525-8ab6-8fb1127732a5",
+      "name": "Get Ray cluster version",
+      "request": {
+        "name": "Get Ray cluster version",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            "version"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "d94cb130-d430-4e0f-9b47-6bf0cd9cb33c",
+          "name": "Cluster version info.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "version"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"version\": \"string\",\n  \"ray_version\": \"string\",\n  \"ray_commit\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://127.0.0.1:8265",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "00dc0ff5-d6f8-4381-8329-1ea49e0d0c62",
+    "name": "Ray Jobs REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API exposed by the Ray head node (default port 8265) for submitting,\nlisting, inspecting, and stopping Ray jobs and retrieving job logs.\nOpen-source Ray clusters are typically unauthenticated; production\ndeployments rely on network controls or Anyscale-managed authentication.\n\n\nContact Support:\n Name: Ray Project",
+      "type": "text/plain"
+    }
+  }
+}

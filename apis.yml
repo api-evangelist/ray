@@ -95,7 +95,7 @@ common:
     url: https://www.anyscale.com
   - type: Slack
     url: https://www.ray.io/community
-  - type: Forum
+  - type: Forums
     url: https://discuss.ray.io
   - type: Blog
     url: https://www.anyscale.com/blog

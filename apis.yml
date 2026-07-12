@@ -83,6 +83,8 @@ apis:
         url: https://docs.ray.io/en/latest/serve/production-guide/index.html
 
 common:
+  - type: DomainSecurity
+    url: security/ray-domain-security.yml
   - type: Website
     url: https://www.ray.io
   - type: Documentation

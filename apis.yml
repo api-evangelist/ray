@@ -83,6 +83,8 @@ apis:
         url: https://docs.ray.io/en/latest/serve/production-guide/index.html
 
 common:
+  - type: AgenticAccess
+    url: agentic-access/ray-agentic-access.yml
   - type: DomainSecurity
     url: security/ray-domain-security.yml
   - type: Website

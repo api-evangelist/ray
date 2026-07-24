@@ -1,0 +1,42 @@
+openapi: 3.1.0
+info:
+  title: Ray REST Jobs Version API
+  description: 'REST API exposed by the Ray head node (default port 8265) for submitting,
+
+    listing, inspecting, and stopping Ray jobs and retrieving job logs.
+
+    Open-source Ray clusters are typically unauthenticated; production
+
+    deployments rely on network controls or Anyscale-managed authentication.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Ray Project
+    url: https://docs.ray.io
+servers:
+- url: http://127.0.0.1:8265
+  description: Ray head node (default Dashboard / Jobs API port)
+tags:
+- name: Version
+paths:
+  /api/version:
+    get:
+      summary: Get Ray cluster version
+      operationId: getVersion
+      responses:
+        '200':
+          description: Cluster version info.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  version:
+                    type: string
+                  ray_version:
+                    type: string
+                  ray_commit:
+                    type: string
+      tags:
+      - Version

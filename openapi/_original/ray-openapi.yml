@@ -1,0 +1,175 @@
+openapi: 3.1.0
+info:
+  title: Ray Jobs REST API
+  description: |
+    REST API exposed by the Ray head node (default port 8265) for submitting,
+    listing, inspecting, and stopping Ray jobs and retrieving job logs.
+    Open-source Ray clusters are typically unauthenticated; production
+    deployments rely on network controls or Anyscale-managed authentication.
+  version: "1.0.0"
+  contact:
+    name: Ray Project
+    url: https://docs.ray.io
+servers:
+  - url: http://127.0.0.1:8265
+    description: Ray head node (default Dashboard / Jobs API port)
+paths:
+  /api/jobs/:
+    get:
+      summary: List all jobs
+      operationId: listJobs
+      responses:
+        '200':
+          description: Map of submission IDs to job details.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  $ref: '#/components/schemas/JobInfo'
+    post:
+      summary: Submit a new job
+      operationId: submitJob
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JobSubmitRequest'
+      responses:
+        '200':
+          description: Job submitted.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+  /api/jobs/{job_id}:
+    parameters:
+      - $ref: '#/components/parameters/jobId'
+    get:
+      summary: Get job status
+      operationId: getJob
+      responses:
+        '200':
+          description: Job details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobInfo'
+  /api/jobs/{job_id}/logs:
+    parameters:
+      - $ref: '#/components/parameters/jobId'
+    get:
+      summary: Get job logs
+      operationId: getJobLogs
+      responses:
+        '200':
+          description: Job logs.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  logs:
+                    type: string
+  /api/jobs/{job_id}/stop:
+    parameters:
+      - $ref: '#/components/parameters/jobId'
+    post:
+      summary: Stop a job
+      operationId: stopJob
+      responses:
+        '200':
+          description: Stop result.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  stopped:
+                    type: boolean
+  /api/version:
+    get:
+      summary: Get Ray cluster version
+      operationId: getVersion
+      responses:
+        '200':
+          description: Cluster version info.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  version:
+                    type: string
+                  ray_version:
+                    type: string
+                  ray_commit:
+                    type: string
+components:
+  parameters:
+    jobId:
+      name: job_id
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    JobSubmitRequest:
+      type: object
+      required: [entrypoint]
+      properties:
+        entrypoint:
+          type: string
+          description: Shell command run on the cluster to start the job.
+        runtime_env:
+          type: object
+          description: Runtime environment (pip, working_dir, env_vars, ...).
+        job_id:
+          type: [string, "null"]
+          description: Optional client-supplied submission ID.
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+        entrypoint_num_cpus:
+          type: number
+        entrypoint_num_gpus:
+          type: number
+        entrypoint_resources:
+          type: object
+          additionalProperties:
+            type: number
+    JobInfo:
+      type: object
+      properties:
+        type:
+          type: string
+        job_id:
+          type: string
+        submission_id:
+          type: string
+        driver_info:
+          type: object
+        status:
+          type: string
+          enum: [PENDING, RUNNING, STOPPED, SUCCEEDED, FAILED]
+        entrypoint:
+          type: string
+        message:
+          type: string
+        error_type:
+          type: [string, "null"]
+        start_time:
+          type: integer
+        end_time:
+          type: [integer, "null"]
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+        runtime_env:
+          type: object

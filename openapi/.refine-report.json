@@ -1,0 +1,16 @@
+{
+  "provider": "ray",
+  "sources": [
+    "ray-jobs-api-openapi.yml",
+    "ray-version-api-openapi.yml"
+  ],
+  "outputs": [
+    "ray-jobs-api-openapi.yml",
+    "ray-version-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

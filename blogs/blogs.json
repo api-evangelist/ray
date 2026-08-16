@@ -5,7 +5,7 @@
       "source": "https://www.anyscale.com/rss.xml",
       "feed_url": "https://www.anyscale.com/rss.xml",
       "title": "",
-      "saved": 1,
+      "saved": 7,
       "method": "feed"
     },
     {
@@ -13,10 +13,11 @@
       "feed_url": "https://discuss.ray.io",
       "title": "",
       "saved": 0,
-      "method": "none"
+      "method": "none",
+      "error": "parse_failed"
     }
   ],
-  "post_count": 25,
-  "fetched": "2026-08-06T14:08:46Z",
+  "post_count": 32,
+  "fetched": "2026-08-15T12:11:08Z",
   "agent_pulled": "2026-07-04"
 }

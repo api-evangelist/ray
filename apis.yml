@@ -24,6 +24,14 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ray.png
 tags:
   - Distributed Computing
+  - Machine-Learning
+  - AI Infrastructure
+  - Python
+  - Model Serving
+  - Open-Source
+  - Compute
+tags_raw:
+  - Distributed Computing
   - Machine Learning
   - AI Infrastructure
   - Python
@@ -45,6 +53,11 @@ apis:
   humanURL: https://docs.ray.io/en/latest/cluster/running-applications/job-submission/rest.html
   baseURL: http://127.0.0.1:8265/api
   tags:
+  - Job
+  - Cluster
+  - Submission
+  - Logs
+  tags_raw:
   - Jobs
   - Cluster
   - Submission
@@ -94,6 +107,8 @@ apis:
   humanURL: https://docs.ray.io/en/latest/cluster/running-applications/job-submission/rest.html
   baseURL: http://127.0.0.1:8265/api
   tags:
+  - Job
+  tags_raw:
   - Jobs
   properties:
   - type: OpenAPI

@@ -10,6 +10,18 @@ description: >-
   submitting jobs, inspecting actors and tasks, and serving deployed
   applications via Ray Serve HTTP endpoints.
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: unknown
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  - repository-unlicensed
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
@@ -124,6 +136,12 @@ apis:
   - type: OpenAPI
     url: openapi/ray-version-api-openapi.yml
 common:
+  - type: Releases
+    url: https://github.com/ray-project/ray/releases
+  - type: SecurityPolicy
+    url: https://github.com/ray-project/ray/blob/master/SECURITY.md
+  - type: ContributionGuide
+    url: https://github.com/ray-project/ray/blob/master/CONTRIBUTING.rst
   - type: AgenticAccess
     url: agentic-access/ray-agentic-access.yml
   - type: DomainSecurity

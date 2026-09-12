@@ -2,24 +2,22 @@
   "repo": "ray",
   "feeds": [
     {
-      "source": "https://www.anyscale.com/rss.xml",
-      "feed_url": "https://www.anyscale.com/rss.xml",
-      "title": "",
-      "saved": 0,
-      "method": "feed",
-      "nature": "vendor-blog",
-      "nature_basis": "path_blog"
-    },
-    {
       "source": "https://discuss.ray.io",
       "feed_url": "https://discuss.ray.io",
       "title": "",
       "saved": 0,
       "method": "none"
+    },
+    {
+      "source": "https://www.anyscale.com/rss.xml",
+      "feed_url": "https://www.anyscale.com/rss.xml",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
     }
   ],
-  "post_count": 54,
-  "fetched": "2026-08-30T22:33:40Z",
+  "post_count": 55,
+  "fetched": "2026-09-06T19:17:18Z",
   "agent_pulled": "2026-07-04",
   "feed_nature": "vendor-blog",
   "feed_nature_basis": "path_blog",

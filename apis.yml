@@ -90,6 +90,11 @@ apis:
   baseURL: http://127.0.0.1:8265/api
   tags:
   - Observability
+  - Dashboards
+  - Cluster State
+  - Actors
+  tags_raw:
+  - Observability
   - Dashboard
   - Cluster State
   - Actors

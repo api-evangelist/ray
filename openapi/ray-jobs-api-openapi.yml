@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Ray REST Jobs API
   description: 'REST API exposed by the Ray head node (default port 8265) for submitting,
@@ -7,9 +7,7 @@ info:
 
     Open-source Ray clusters are typically unauthenticated; production
 
-    deployments rely on network controls or Anyscale-managed authentication.
-
-    '
+    deployments rely on network controls or Anyscale-managed authentication.'
   version: 1.0.0
   contact:
     name: Ray Project
@@ -108,42 +106,7 @@ paths:
       tags:
       - Jobs
 components:
-  parameters:
-    jobId:
-      name: job_id
-      in: path
-      required: true
-      schema:
-        type: string
   schemas:
-    JobSubmitRequest:
-      type: object
-      required:
-      - entrypoint
-      properties:
-        entrypoint:
-          type: string
-          description: Shell command run on the cluster to start the job.
-        runtime_env:
-          type: object
-          description: Runtime environment (pip, working_dir, env_vars, ...).
-        job_id:
-          type:
-          - string
-          - 'null'
-          description: Optional client-supplied submission ID.
-        metadata:
-          type: object
-          additionalProperties:
-            type: string
-        entrypoint_num_cpus:
-          type: number
-        entrypoint_num_gpus:
-          type: number
-        entrypoint_resources:
-          type: object
-          additionalProperties:
-            type: number
     JobInfo:
       type: object
       properties:
@@ -183,3 +146,38 @@ components:
             type: string
         runtime_env:
           type: object
+    JobSubmitRequest:
+      type: object
+      required:
+      - entrypoint
+      properties:
+        entrypoint:
+          type: string
+          description: Shell command run on the cluster to start the job.
+        runtime_env:
+          type: object
+          description: Runtime environment (pip, working_dir, env_vars, ...).
+        job_id:
+          type:
+          - string
+          - 'null'
+          description: Optional client-supplied submission ID.
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+        entrypoint_num_cpus:
+          type: number
+        entrypoint_num_gpus:
+          type: number
+        entrypoint_resources:
+          type: object
+          additionalProperties:
+            type: number
+  parameters:
+    jobId:
+      name: job_id
+      in: path
+      required: true
+      schema:
+        type: string

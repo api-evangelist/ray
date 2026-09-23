@@ -1,8 +1,7 @@
 {
   "provider": "ray",
   "sources": [
-    "ray-jobs-api-openapi.yml",
-    "ray-version-api-openapi.yml"
+    "_original/ray-openapi.yml"
   ],
   "outputs": [
     "ray-jobs-api-openapi.yml",
@@ -11,6 +10,21 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "ray-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "ray-openapi.yml: tagged paths GET /api/jobs/ -> Jobs",
+    "ray-openapi.yml: tagged paths POST /api/jobs/ -> Jobs",
+    "ray-openapi.yml: tagged paths GET /api/jobs/{job_id} -> Jobs",
+    "ray-openapi.yml: tagged paths GET /api/jobs/{job_id}/logs -> Jobs",
+    "ray-openapi.yml: tagged paths POST /api/jobs/{job_id}/stop -> Jobs",
+    "ray-openapi.yml: tagged paths GET /api/version -> Version",
+    "ray-openapi.yml: declared missing tag: Jobs",
+    "ray-openapi.yml: declared missing tag: Version",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "ray-jobs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ray-version-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

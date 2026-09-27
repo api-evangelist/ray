@@ -11,16 +11,21 @@ description: >-
   applications via Ray Serve HTTP endpoints.
 type: Index
 deliveryModel:
-  model: unknown
-  open_source: unknown
+  model: self-hosted
+  license: Apache-2.0
+  license_evidence:
+    repo: ray-project/ray
+    spdx: Apache-2.0
+    stars: 43923
+  open_source: true
   commercial: false
   callable_host: false
-  label: Delivery model not determined — needs a product licence on record
-  confidence: low
+  label: Self-hosted open source · you run it yourself
+  confidence: medium
   source:
   - openapi
-  - repository-unlicensed
-  generated: '2026-08-28'
+  - repository-license
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: unknown
@@ -36,11 +41,11 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ray.png
 tags:
   - Distributed Computing
-  - Machine-Learning
+  - Machine Learning
   - AI Infrastructure
   - Python
   - Model Serving
-  - Open-Source
+  - Open Source
   - Compute
 tags_raw:
   - Distributed Computing
@@ -50,6 +55,8 @@ tags_raw:
   - Model Serving
   - Open Source
   - Compute
+  - Machine-Learning
+  - Open-Source
 url: >-
   https://raw.githubusercontent.com/api-evangelist/ray/refs/heads/main/apis.yml
 created: '2026-05-11'

@@ -106,7 +106,42 @@ paths:
       tags:
       - Jobs
 components:
+  parameters:
+    jobId:
+      name: job_id
+      in: path
+      required: true
+      schema:
+        type: string
   schemas:
+    JobSubmitRequest:
+      type: object
+      required:
+      - entrypoint
+      properties:
+        entrypoint:
+          type: string
+          description: Shell command run on the cluster to start the job.
+        runtime_env:
+          type: object
+          description: Runtime environment (pip, working_dir, env_vars, ...).
+        job_id:
+          type:
+          - string
+          - 'null'
+          description: Optional client-supplied submission ID.
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+        entrypoint_num_cpus:
+          type: number
+        entrypoint_num_gpus:
+          type: number
+        entrypoint_resources:
+          type: object
+          additionalProperties:
+            type: number
     JobInfo:
       type: object
       properties:
@@ -146,38 +181,3 @@ components:
             type: string
         runtime_env:
           type: object
-    JobSubmitRequest:
-      type: object
-      required:
-      - entrypoint
-      properties:
-        entrypoint:
-          type: string
-          description: Shell command run on the cluster to start the job.
-        runtime_env:
-          type: object
-          description: Runtime environment (pip, working_dir, env_vars, ...).
-        job_id:
-          type:
-          - string
-          - 'null'
-          description: Optional client-supplied submission ID.
-        metadata:
-          type: object
-          additionalProperties:
-            type: string
-        entrypoint_num_cpus:
-          type: number
-        entrypoint_num_gpus:
-          type: number
-        entrypoint_resources:
-          type: object
-          additionalProperties:
-            type: number
-  parameters:
-    jobId:
-      name: job_id
-      in: path
-      required: true
-      schema:
-        type: string

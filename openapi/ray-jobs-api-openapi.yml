@@ -106,13 +106,6 @@ paths:
       tags:
       - Jobs
 components:
-  parameters:
-    jobId:
-      name: job_id
-      in: path
-      required: true
-      schema:
-        type: string
   schemas:
     JobSubmitRequest:
       type: object
@@ -181,3 +174,10 @@ components:
             type: string
         runtime_env:
           type: object
+  parameters:
+    jobId:
+      name: job_id
+      in: path
+      required: true
+      schema:
+        type: string
